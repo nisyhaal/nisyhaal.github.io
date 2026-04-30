@@ -231,3 +231,49 @@
     });
   });
 })();
+
+// ===== Modal System =====
+(function () {
+  const triggers = document.querySelectorAll('.btn-modal-trigger');
+  const overlays = document.querySelectorAll('.modal-overlay');
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openModal(btn.getAttribute('data-modal'));
+    });
+  });
+
+  overlays.forEach((overlay) => {
+    // Close on overlay background click
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal(overlay);
+    });
+
+    // Close button
+    const closeBtn = overlay.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => closeModal(overlay));
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlays.forEach((overlay) => {
+        if (overlay.classList.contains('active')) closeModal(overlay);
+      });
+    }
+  });
+})();
