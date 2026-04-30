@@ -2,487 +2,455 @@
 <html lang="en">
 
   <head>
-    <meta charset = "utf-8">
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
-    />
-    <title>Home</title>
-    <script src="/panel-item.js"></script>
-    <link rel="stylesheet" href="/swiper-bundle.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="three-dots.css" rel="stylesheet">
-    <link rel="stylesheet" media="screen" type = "text/css" href ="Home.css">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisyhaal Tamil | AI & Robotics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
   </head>
 
-  <body id = "body">
+  <body>
 
-    <!-- Mob-section-start -->
-    <div class = "ursor">
-      <img src="/image/clay-banks-u27Rrbs9Dwc-unsplash.jpg" id="myVideo">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
 
-      <div id="social-link">
-        <div class="inner">
-          <span><img src=""></span>
-          <div class = "icon-home">
-            <div class = "linkedin">
-              <a href="https://www.linkedin.com/in/nisyhaal-tamil/" title="LinkedIn">
-                <img src="/icons/linkedin.png">
-              </a>
-            </div>
-            <div class = "github">
-              <a href="https://github.com/nisyhaal" title="Github">
-                <img src="/icons/github.png">
-              </a>
-            </div>
-            <div class = "resume">
-              <a href="https://drive.google.com/file/d/1ljBero5EqBwXUpCP8vYG70NKS2WsyoqZ/view" title="Resume">
-                <img src="/icons/resume-black.png">
-              </a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-brand">NT</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name glitch" data-text="Nisyhaal Tamil">Nisyhaal Tamil</h1>
+          <div class="hero-title-wrapper">
+            <span class="hero-title-static">I build </span>
+            <span class="hero-title-typed" id="typed-text"></span>
+            <span class="typed-cursor">|</span>
+          </div>
+          <p class="hero-description">AI & Robotics Engineer crafting intelligent systems from model development to production deployment</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+          <div class="hero-social">
+            <a href="https://www.linkedin.com/in/nisyhaal-tamil/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/nisyhaal" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="mailto:nisyhaaltamil6@gmail.com" aria-label="Email">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="/image/My_Profile/Nisyhaal_home.png" alt="Nisyhaal Tamil" class="hero-image">
+            <div class="hero-image-ring"></div>
+            <div class="hero-image-ring ring-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Scroll Down</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <img src="/image/My_Profile/Nisyhaal_about.png" alt="About Nisyhaal">
+            <div class="about-image-decoration"></div>
+          </div>
+          <div class="about-content reveal">
+            <p class="about-lead">AI and robotics engineer with experience in designing and deploying intelligent systems across the full engineering lifecycle — from model development and optimization to production infrastructure and customer-facing delivery.</p>
+            <p>Proven track record of building end-to-end solutions spanning edge AI, computer vision, real-time robotics, and generative AI, with deep expertise in bridging research-level techniques to deployment-ready products on resource-constrained hardware.</p>
+            <p>Driven by a dual ambition: to push the technical frontier in AI and autonomous systems, and to grow into a leadership role that shapes engineering strategy, mentors talent, and steers high-impact product decisions.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number" data-target="4">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="8">0</span><span class="stat-suffix">+</span>
+                <span class="stat-label">Major Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-target="4">0</span><span class="stat-suffix"></span>
+                <span class="stat-label">Companies</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="home">
-        <div id = "nisyhaaltamil">
-          <div>
-            <img src="/image/My_Profile/Nisyhaal_home.png" id ="hello_img">
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-dark" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Software Optimization & Enabling Engineer</h3>
+                <span class="timeline-company">Intel</span>
+                <span class="timeline-date">Jun 2024 – Present</span>
+                <span class="timeline-location">Penang, Malaysia</span>
+              </div>
+              <div class="timeline-body">
+                <p>Designing, developing, and deploying edge AI solutions spanning computer vision, robotics, generative AI, and model optimization on Intel hardware (Arc GPUs, Xeon, NPUs).</p>
+                <div class="timeline-tags">
+                  <span class="tag">Edge AI</span>
+                  <span class="tag">OpenVINO</span>
+                  <span class="tag">ROS 2</span>
+                  <span class="tag">LLM</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">FastAPI</span>
+                </div>
+                <details class="timeline-details">
+                  <summary>Key Contributions</summary>
+                  <ul>
+                    <li>Deployed multi-stage inference pipelines spanning object detection, OCR, speech, and vision-language models on Intel Arc GPUs, integrated GPUs, and NPUs using OpenVINO</li>
+                    <li>Quantized and optimized models (INT4/INT8/FP16) and accelerated LLM fine-tuning on Intel XPU for Llama, Qwen, Mistral, and DeepSeek families</li>
+                    <li>Developed ROS 2 packages for industrial robotic arms, hardware drivers, teleoperation, gripper control, and motion planning</li>
+                    <li>Built LLM-driven agentic interfaces with tool-calling and RAG for manufacturing automation</li>
+                    <li>Designed microservice architectures (up to 10-service Docker Compose stacks) with task queues, reverse proxies, TLS, JWT/RBAC auth, and CI/CD pipelines</li>
+                    <li>Delivered live technical demos at Embedded World 2025</li>
+                  </ul>
+                </details>
+              </div>
+            </div>
           </div>
-          <div class="Hi">
-            <a>N</a><a class="name-user">isyhaal</a>
-            <a> T</a><a class="name-user">amil</a>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>AI Engineer</h3>
+                <span class="timeline-company">Innoractive</span>
+                <span class="timeline-date">Apr 2023 – May 2024</span>
+                <span class="timeline-location">Kuala Lumpur, Malaysia</span>
+              </div>
+              <div class="timeline-body">
+                <p>Led development of automated AI-based systems for image classification, text classification, and document parsing with focus on business alignment and scalable deployment.</p>
+                <div class="timeline-tags">
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">NLP</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">OpenAI</span>
+                </div>
+                <details class="timeline-details">
+                  <summary>Key Contributions</summary>
+                  <ul>
+                    <li>Led development of an automated AI-based image classification system for parcel approval and rejection</li>
+                    <li>Built a modular text classification system with a FastAPI application</li>
+                    <li>Developed a resume parser for PDF and image formats using OpenAI GPT API</li>
+                    <li>Aligned AI initiatives with business goals to drive operational impact and ROI</li>
+                  </ul>
+                </details>
+              </div>
+            </div>
           </div>
-          <div class="bio">
-            <a>Artificial Intelligence, Machine Learning, Data Science</a>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Machine Learning Engineer</h3>
+                <span class="timeline-company">Glueck Technologies</span>
+                <span class="timeline-date">Jun 2022 – Mar 2023</span>
+                <span class="timeline-location">Petaling Jaya, Malaysia</span>
+              </div>
+              <div class="timeline-body">
+                <p>Designed and deployed end-to-end computer vision pipelines for object detection, OCR extraction, and damage identification across edge, on-premises, and cloud environments.</p>
+                <div class="timeline-tags">
+                  <span class="tag">NVIDIA TAO</span>
+                  <span class="tag">DeepStream</span>
+                  <span class="tag">TensorRT</span>
+                  <span class="tag">CUDA</span>
+                  <span class="tag">C++</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Junior AI Engineer</h3>
+                <span class="timeline-company">Skymind</span>
+                <span class="timeline-date">Jun 2021 – May 2022</span>
+                <span class="timeline-location">Kuala Lumpur, Malaysia</span>
+              </div>
+              <div class="timeline-body">
+                <p>Developed and enhanced computer vision algorithms for segmentation, OCR, fraud detection, and face recognition. Delivered AI-driven solutions and conducted training sessions for teams and stakeholders.</p>
+                <div class="timeline-tags">
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">Segmentation</span>
+                  <span class="tag">OCR</span>
+                  <span class="tag">Face Recognition</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div id = "Container">
-        <div class="wrapper">
-          <div class="progress-container">
-            <div class="progress-bar" id="myBar">
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <div class="projects-grid">
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">01</div>
+              <h3>Agentic AI Manufacturing HMI</h3>
+              <p>End-to-end agentic AI manufacturing system integrating real-time computer vision, 6-DOF robotic automation, conveyor belt control, and LLM-based natural-language interface for PCB defect detection. Demonstrated at Embedded World 2025.</p>
+              <div class="project-tech">
+                <span>OpenVINO</span><span>MobileNetV2</span><span>FastAPI</span><span>MongoDB</span><span>Llama 3.2</span><span>RAG</span>
+              </div>
+              <div class="project-stats">
+                <span>79.5% commits</span><span>98.2% mAP</span><span>7 LLM tools</span>
+              </div>
             </div>
           </div>
-          <nav>
-            <div class = "logo">
-              <h4>My Portfolio</h4>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">02</div>
+              <h3>Intelligent Robotic Pick-and-Place</h3>
+              <p>End-to-end robotic pick-and-place system in ROS 2 Jazzy with YOLO OBB detection achieving 30Hz real-time inference through OpenVINO acceleration. Automated synthetic dataset pipeline using Gazebo Harmonic simulation.</p>
+              <div class="project-tech">
+                <span>ROS 2</span><span>YOLO OBB</span><span>OpenVINO</span><span>Gazebo</span><span>MoveIt 2</span>
+              </div>
+              <div class="project-stats">
+                <span>Sole Author</span><span>30Hz Inference</span><span>51 commits</span>
+              </div>
             </div>
-            <ul class="nav-links">
-              <li><a href="#about-anchor" class="btn-flip"  data-front="About Me"></a></li>
-              <li><a href="#exp-anchor" class="btn-flip"  data-front="Experience"></a></li>
-              <li><a href="#project-anchor" class="btn-flip"  data-front="projects"></a></li>
-              <li><a href="#skill-anchor" class="btn-flip"  data-front="skills"></a></li>
-              <li><a href="#contact-anchor" class="btn-flip"  data-front="contact"></a></li>
-            </ul>
-            <div class="mob-button">
-              <div class="linea"></div>
-              <div class="lineb"></div>
-              <div class="linec"></div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">03</div>
+              <h3>AI-Powered Water Meter Reading</h3>
+              <p>Multi-stage AI inference pipeline chaining 5 distinct models: instance segmentation, YOLOv8 OBB detection, custom OpenVINO OCR with CTC decoding, and RapidOCR fallback with perspective warp rectification.</p>
+              <div class="project-tech">
+                <span>YOLOv8</span><span>OpenVINO</span><span>PaddleOCR</span><span>FastAPI</span><span>PostgreSQL</span>
+              </div>
+              <div class="project-stats">
+                <span>Tech Lead</span><span>5 AI Models</span><span>64% commits</span>
+              </div>
             </div>
-          </nav>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">04</div>
+              <h3>Visual-Textual Document Reasoning Engine</h3>
+              <p>Multi-modal agentic AI system enabling natural-language querying of visually dense PDF documentation using ColQwen2.5 late-interaction retrieval and Qwen2.5-VL vision-language inference.</p>
+              <div class="project-tech">
+                <span>ColQwen2.5</span><span>VLM</span><span>OpenVINO</span><span>Gradio</span><span>INT4/INT8</span>
+              </div>
+              <div class="project-stats">
+                <span>Sole Author</span><span>12+ model variants</span><span>4 families</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">05</div>
+              <h3>VLA Robotic Arm Framework</h3>
+              <p>Vision-Language-Action framework with ROS 2 industrial gripper driver, real-time MyCobot-to-TM5S teleoperation bridge, and multi-view camera integration for Learning from Demonstration.</p>
+              <div class="project-tech">
+                <span>ROS 2</span><span>C++</span><span>gRPC</span><span>RealSense</span><span>TF2</span>
+              </div>
+              <div class="project-stats">
+                <span>Primary Author</span><span>Sub-ms Latency</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-number">06</div>
+              <h3>Real-Time Edge Speech Translation</h3>
+              <p>Multi-threaded real-time speech translation system running OpenAI Whisper optimized via OpenVINO INT8/FP16 quantization on Intel edge GPUs, supporting simultaneous translation to 3 languages.</p>
+              <div class="project-tech">
+                <span>Whisper</span><span>OpenVINO</span><span>INT8/FP16</span><span>Multi-threading</span>
+              </div>
+              <div class="project-stats">
+                <span>Sole Author</span><span>3 Languages</span><span>3× VRAM Reduction</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <a id="about-anchor"></a>
-        <about>
-          <div>
-            <img src="/image/My_Profile/Nisyhaal_about.png">
-          </div>
-          <div class="about-content"><h1>About Me</h1><br>
-            <p>As a Mechatronics Engineer with a focus on Machine Learning and Computer Vision, I
-            bring extensive expertise in Python, C/C++, Linux, and GPUs to my portfolio. My passion for Data
-            Science has led me to embark on a new venture, exploring the many possibilities it offers, from
-            predictive analytics to deep learning. With a talent for turning raw data into valuable insights,
-            I'm excited to help organizations leverage the power of data to drive their success. Join me on this
-            journey as we discover new frontiers in Data Science and make the impossible, possible!</p>
-          </div>
-          
-          <span class="box-block-1"></span>
-          <span class="box-block-2"></span>
-          <span class="box-block-3"></span>
-        </about>
-        <a id="exp-anchor"></a>
-        <experience>
-          
-          <img src="/image/paul-gilmore-8kDOOrs608I-unsplash.jpg">
-          <div class="on-exp">
-            <h1>My Experience</h1>
-          <div id="exp-panel">
-            <div class="sec-exp">
-              <h1>Artificial Intelligence Engineer<h1>
-                <img src="/icons/ai2.png">
-                <p>
-                  Designed and implemented cutting-edge image classifier APIs, seamlessly integrated into multiple
-                  applications, significantly enhancing their ability to provide comprehensive coverage against parcel
-                  loss and damages.
-                </p>
-                <p><em>April 2023 till now</em></p>
-            </div>
-            <div class="sec-exp">
-              <h1>Machine Learning Engineer<h1>
-              <img src="/icons/programming.png">
-              <p>
-                Successfully led a Computer Vision application development using DeepStream that detects & tracks
-                object of interest then extracts information (OCR) & identifies damages from data preparation up to
-                model deployment utilizing GPUs.
-              </p>
-              <p><em>June 2022 till March 2023</em></p>
-            </div>
+      </div>
+    </section>
 
-            <div class="sec-exp">
-              <h1>Jr Artificial Intelligence Engineer<h1>
-              <img src="/icons/ai.png">
-              <p>
-                Researched computer vision algorithms, deep learning techniques for recognition,
-                detection, OCR, and fraud detection. Curated AI syllabuses for universities, support product
-                delivery, testing, and offer technical support. Conduct training on AI-related topics.
-              </p>
-              <p><em>June 2021 till May 2022</em></p>
+    <!-- Skills Section -->
+    <section class="section section-dark" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Technical Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AI & ML</h3>
+            <div class="skill-tags">
+              <span>OpenVINO</span><span>PyTorch</span><span>TensorRT</span><span>ONNX</span>
+              <span>YOLO</span><span>Whisper</span><span>LLM Fine-tuning</span><span>RAG</span>
+              <span>Computer Vision</span><span>NLP</span><span>Model Quantization</span>
             </div>
           </div>
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68 1.65 1.65 0 0 0 10 3.17V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>Robotics</h3>
+            <div class="skill-tags">
+              <span>ROS 2</span><span>MoveIt 2</span><span>Gazebo</span><span>URDF</span>
+              <span>Motion Planning</span><span>Teleoperation</span><span>Sim-to-Real</span>
+              <span>Arduino</span>
+            </div>
           </div>
-        </experience>
-        <a id="project-anchor"></a>
-        <projects>
-          <h1>Projects</h1>
-          <div class="indProj-view">
-            <div class="indProj">
-              <img src="/Projects/Parcel.jpg">
-              <div class="cert-sub">Parcel Classifier</div>
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <div class="indProj">
-              <img src="/Projects/DeepStream%20Container%20Detection.jpg">
-              <div class="cert-sub">DeepStream Container Detection (Damage & OCR)</div>
+            <h3>Languages & Frameworks</h3>
+            <div class="skill-tags">
+              <span>Python</span><span>C++</span><span>TypeScript</span><span>FastAPI</span>
+              <span>Next.js</span><span>React</span><span>Gradio</span><span>OpenCV</span>
             </div>
-            <div class="indProj">
-              <img src="/Projects/Face%20Recognition.jpg">
-              <div class="cert-sub">Face Recognition</div>
+          </div>
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <div class="indProj">
-              <img src="/Projects/Coming%20Soon.jpg">
-              <div class="cert-sub">In Progress (Text Based Description Classification)</div>
+            <h3>Infrastructure</h3>
+            <div class="skill-tags">
+              <span>Docker</span><span>Linux</span><span>CI/CD</span><span>PostgreSQL</span>
+              <span>MongoDB</span><span>Microservices</span><span>JWT/RBAC</span><span>Nginx</span>
             </div>
-<!--          <div class="indProj">-->
-<!--            <img src="/Projects/Coming%20Soon.jpg">-->
-<!--            <div class="cert-sub">Coming Soon</div>-->
-<!--          </div>-->
-<!--          <div class="indProj">-->
-<!--            <img src="/Projects/Coming%20Soon.jpg">-->
-<!--            <div class="cert-sub">Coming Soon</div>-->
-<!--          </div>-->
+          </div>
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3>Hardware Platforms</h3>
+            <div class="skill-tags">
+              <span>Intel Arc GPU</span><span>Intel Xeon</span><span>Intel NPU</span>
+              <span>NVIDIA GPU</span><span>Edge Devices</span><span>CUDA</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <div class="skill-category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Generative AI</h3>
+            <div class="skill-tags">
+              <span>LLM Agents</span><span>Tool-Calling</span><span>RAG</span><span>VLM</span>
+              <span>Llama</span><span>Qwen</span><span>Mistral</span><span>DeepSeek</span>
+            </div>
+          </div>
         </div>
-        </projects>
-
-        <a id="skill-anchor"></a>
-        <skill>
-          <img src="/image/emile-perron-xrVDYZRGdw4-unsplash.jpg">
- 
-            <span class="box-block-5"></span>
-
-          <div id="skill-mod">
-          <div class= "pskill"><h1 class="ti">My Expertise</h1>
-            
-            <div class="Other-skills">
-              <a>Python</a>
-              <div class="progress"><div class="skill m-1"></div></div>
-            </div>
-            <div class="Other-skills">
-              <a>C/C++</a>
-              <div class="progress"><div class="skill m-2"></div></div>
-            </div>
-            <div class="Other-skills">
-              <a>Linux</a>
-              <div class="progress"><div class="skill m-3"></div></div>
-            </div>
-<!--            <div class="Other-skills">-->
-<!--              <a>Database(SQL)</a>-->
-<!--              <div class="progress"><div class="skill m-4"></div></div>-->
-<!--            </div>-->
-<!--            <div class="Other-skills">-->
-<!--              <a>Python</a>-->
-<!--              <div class="progress"><div class="skill m-5"></div></div>-->
-<!--            </div>-->
-<!--            <div class="Other-skills">-->
-<!--              <a>C/C++</a>-->
-<!--              <div class="progress"><div class="skill m-6"></div></div>-->
-<!--            </div>-->
-
-            </div>
-            </div>
-        </skill>
-
-          <a id="contact-anchor"></a>
-          <div class="contact-me">
-  <div class="contact-me-content">
-  <div class="contact-title">
-    <a>Contact Me</a></div>
-  <div id="email"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nisyhaaltamilwork@email.com">nisyhaaltamilwork@gmail.com</a></div>
-  <div class="contact-section">
-    
-    <div class="social">
-
-      <div class = "con">
-        <a href="https://www.linkedin.com/in/nisyhaal-tamil/" title="LinkedIn">
-          <img src="/icons/linkedin.png">
-        </a>
       </div>
-      <div class = "con">
-        <a href="https://github.com/nisyhaal" title="Github">
-          <img src="/icons/github.png">
-        </a>
-      </div>
-      <div class = "con">
-        <a href="https://drive.google.com/file/d/1ljBero5EqBwXUpCP8vYG70NKS2WsyoqZ/view" title="Resume">
-          <img src="/icons/resume-white.png">
-        </a>
-      </div>
-      </div>
-      <div id="license">Web Template By <a href="https://joeljaimon.herokuapp.com">Joel.</a> </div>
-    </div>
+    </section>
 
-  </div>
-  </div>
-</div>
-    </div>
-    <!-- Mob-section-end -->
-
-    <!-- PC-section-start -->
-    
-    <div class="swiper-container">
-      <div class="theme-but">
-      <button class="theme a-t" data-color="#007fff"><a></a></button>
-      <button class="theme b-t" data-color="#5727b0"><a></a></button>
-      <button class="theme c-t" data-color="#ffd700"><a></a></button>
-      </div>
-
-      <div class="cursor"></div>
-      <div class="swiper-wrapper">
-          <div class="swiper-slide homepage">
-            <img src="/image/clay-banks-u27Rrbs9Dwc-unsplash.jpg" id="myVideo">
-        <div id="social-link">
-          <div class="inner">
-            <span><img src=""></span>
-              <div class = "icon-home">
-                <div class = "linkedin">
-                  <a href="https://www.linkedin.com/in/nisyhaal-tamil/" title="LinkedIn">
-                    <img src="/icons/linkedin.png">
-                  </a>
-                </div>
-                <div class = "github">
-                  <a href="https://github.com/nisyhaal" title="Github">
-                    <img src="/icons/github.png">
-                  </a>
-                </div>
-                <div class = "resume">
-                  <a href="https://drive.google.com/file/d/1ljBero5EqBwXUpCP8vYG70NKS2WsyoqZ/view" title="Resume">
-                    <img src="/icons/resume-black.png">
-                  </a>
-                </div>
-              </div>
-          </div> 
+    <!-- Education Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title reveal">Education</h2>
+        <div class="education-grid">
+          <div class="education-card reveal">
+            <div class="education-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Master of Data Science</h3>
+            <p class="education-school">Universiti Malaya</p>
+            <p class="education-date">Oct 2023 – Jun 2024</p>
+            <p class="education-grade">CGPA: 3.95</p>
+            <div class="education-highlights">
+              <span>Machine Learning</span><span>Deep Learning</span><span>Distributed Computing</span><span>Data Analysis</span>
+            </div>
+          </div>
+          <div class="education-card reveal">
+            <div class="education-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>B.Eng (Hons) Mechatronics</h3>
+            <p class="education-school">Universiti Sains Malaysia</p>
+            <p class="education-date">2015 – 2020</p>
+            <p class="education-grade">Dean's List - Semester 1, 2019/2020</p>
+            <div class="education-highlights">
+              <span>Robotics</span><span>Control Systems</span><span>AI</span><span>IoT</span>
+            </div>
+          </div>
         </div>
-        <div class="home"><div id = "nisyhaaltamil">
-          <div><img src="/image/My_Profile/Nisyhaal_home.png" id ="hello_img"></div>
-          <div class="Hi head">
-            <a>N</a><a class="name-user">isyhaal</a>
-            <a> T</a><a class="name-user">amil</a>
-          </div>
-          <div class="bio"><a>Artificial Intelligence, Machine Learning, Data Science</a></div>
-        </div></div>
-        
-          </div>
-          <div class="swiper-slide aboutmes">
-            <about>
-          
-              <div>
-                
-                <img src="/image/My_Profile/Nisyhaal_about.png">
-              </div>
-              <div><h1><a class="head">About Me</a></h1><br>
-                <p class="pmo">
-                  <a>As a Mechatronics Engineer with a focus on Machine Learning and Computer Vision, I
-                  bring extensive expertise in Python, C/C++, Linux, and GPUs to my portfolio. My passion for Data
-                  Science has led me to embark on a new venture, exploring the many possibilities it offers, from
-                  predictive analytics to deep learning. With a talent for turning raw data into valuable insights,
-                  I'm excited to help organizations leverage the power of data to drive their success. Join me on this
-                  journey as we discover new frontiers in Data Science and make the impossible, possible!</a>
-                </p>
-              </div>
-              <span class="box-block-1"></span>
-              <span class="box-block-2"></span>
-              <span class="box-block-3"></span>
-            </about>
-          </div>
-          <div class="swiper-slide experience">
-            <experience>
-          
-              <img src="/image/paul-gilmore-8kDOOrs608I-unsplash.jpg">
-              <div class="on-exp">
-                <h1><a class="head">My Experience</a></h1>
-              <div id="exp-panel">
-                <div class="sec-exp">
-                  <h1>Artificial Intelligence Engineer<h1>
-                    <img src="/icons/ai2.png">
-                    <p>
-                      Designed and implemented cutting-edge image classifier APIs, seamlessly integrated into multiple
-                      applications, significantly enhancing their ability to provide comprehensive coverage against parcel
-                      loss and damages.
-                    </p>
-                    <p><em>April 2023 till now</em></p>
-                </div>
-                <div class="sec-exp">
-                  <h1>Machine Learning Engineer<h1>
-                    <img src="/icons/programming.png">
-                    <p>
-                      Successfully led a Computer Vision application development using DeepStream that detects & tracks
-                      object of interest then extracts information (OCR) & identifies damages from data preparation up to
-                      model deployment utilizing GPUs.
-                    </p>
-                    <p><em>June 2022 till March 2023</em></p>
-                </div>
-
-                <div class="sec-exp">
-                  <h1>Jr Artificial Intelligence Engineer<h1>
-                    <img src="/icons/ai.png">
-                    <p>
-                      Researched computer vision algorithms, deep learning techniques for recognition,
-                      detection, OCR, and fraud detection. Curated AI syllabuses for universities, support product
-                      delivery, testing, and offer technical support. Conduct training on AI-related topics.
-                    </p>
-                    <p><em>June 2021 till May 2022</em></p>
-                </div>
-              </div>
-              </div>
-            </experience>
-          </div>
-          <div class="swiper-slide projects">
-            <projects>
-              <h1><a class="head">Projects</a></h1>
-              <div class="indProj-view">
-                <div class="indProj">
-                  <img src="/Projects/Parcel.jpg">
-                  <div class="cert-sub">Parcel Classifier</div>
-                </div>
-                <div class="indProj">
-                  <img src="/Projects/DeepStream%20Container%20Detection.jpg">
-                  <div class="cert-sub">DeepStream Container Detection (Damage & OCR)</div>
-                </div>
-                <div class="indProj">
-                  <img src="/Projects/Face%20Recognition.jpg">
-                  <div class="cert-sub">Face Recognition</div>
-                </div>
-                <div class="indProj">
-                  <img src="/Projects/Coming%20Soon.jpg">
-                  <div class="cert-sub">In Progress (Text Based Description Classification)</div>
-                </div>
-<!--              <div class="indProj">-->
-<!--                <img src="/Projects/Coming%20Soon.jpg">-->
-<!--                <div class="cert-sub">Coming Soon</div>-->
-<!--              </div>-->
-<!--              <div class="indProj">-->
-<!--                <img src="/Projects/Coming%20Soon.jpg">-->
-<!--                <div class="cert-sub">Coming Soon</div>-->
-<!--              </div>-->
-            </div>
-            </projects>
-          </div>
-          <div class="swiper-slide skillswipe">
-            <skill>
-              <img src="/image/emile-perron-xrVDYZRGdw4-unsplash.jpg">
-     
-                <span class="box-block-5"></span>
-    
-              <div id="skill-mod">
-              <div class= "pskill"><h1 class="ti"><a class="head">My Expertise</a></h1>
-                
-                <div class="Other-skills">
-                  <a>Python</a>
-                  <div class="progress"><div class="skill m-1"></div></div>
-                </div>
-                <div class="Other-skills">
-                  <a>C/C++</a>
-                  <div class="progress"><div class="skill m-2"></div></div>
-                </div>
-                <div class="Other-skills">
-                  <a>Linux</a>
-                  <div class="progress"><div class="skill m-3"></div></div>
-                </div>
-<!--                <div class="Other-skills">-->
-<!--                  <a>Framework(Django)</a>-->
-<!--                  <div class="progress"><div class="skill m-4"></div></div>-->
-<!--                </div>-->
-<!--                <div class="Other-skills">-->
-<!--                  <a>Python</a>-->
-<!--                  <div class="progress"><div class="skill m-5"></div></div>-->
-<!--                </div>-->
-<!--                <div class="Other-skills">-->
-<!--                  <a>C/C++</a>-->
-<!--                  <div class="progress"><div class="skill m-6"></div></div>-->
-<!--                </div>-->
-    
-                </div>
-                </div>
-            </skill>
-          </div>
-          <div class="swiper-slide">
-            <div class="contact-me">
-              <div class="contact-me-content">
-              <div class="contact-title">
-                <a class="head">Contact Me</a></div>
-              <div id="email"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nisyhaaltamilwork@email.com">nisyhaaltamilwork@gmail.com</a></div>
-              <div class="contact-section">
-                
-                <div class="social">
-                 
-                    <div class = "con image-mouse">
-                    <a href="https://www.linkedin.com/in/nisyhaal-tamil/" title="LinkedIn">
-                      <img src="/icons/linkedin.png">
-                    </a>
-                  </div>
-                  <div class = "con image-mouse">
-                    <a href="https://github.com/nisyhaal" title="Github">
-                      <img src="/icons/github.png">
-                    </a>
-                  </div>
-                  <div class = "con image-mouse">
-                    <a href="https://drive.google.com/file/d/1ljBero5EqBwXUpCP8vYG70NKS2WsyoqZ/view" title="Resume">
-                      <img src="/icons/resume-white.png">
-                    </a>
-                  </div>
-                  </div>
-                  
-                </div>
-                <div id="license" class="pmo" >Web Template By <a href="https://joeljaimon.herokuapp.com">Joel</a> </div>
-            
-              </div>
-            </div>
-          </div>
       </div>
-      
-      <div class="swiper-pagination"></div>
-  </div>
-    <!-- PC-section-end -->
-  
-    <script src="/js/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        spaceBetween: 30,
-        mousewheel: true,
-        keyboard: {
-            enabled: true,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-      },
-    });
-    </script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/nav-mob.js"></script>
-    <script src ="js/nav-scroll.js"></script>
-    <script src="js/cursor.js"></script>
-        
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <div class="contact-content reveal">
+          <p class="contact-description">Seeking opportunities at the intersection of deep technical ownership and team leadership. Let's build something extraordinary together.</p>
+          <div class="contact-links">
+            <a href="mailto:nisyhaaltamil6@gmail.com" class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>nisyhaaltamil6@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/nisyhaal-tamil/" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>linkedin.com/in/nisyhaal-tamil</span>
+            </a>
+            <a href="https://github.com/nisyhaal" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              <span>github.com/nisyhaal</span>
+            </a>
+            <a href="tel:+601116301017" class="contact-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+60 11-1630 1017</span>
+            </a>
+          </div>
+          <a href="mailto:nisyhaaltamil6@gmail.com" class="btn btn-primary btn-lg">Say Hello</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Nisyhaal Tamil. Built with passion.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
